@@ -3,8 +3,6 @@ procedure InitializeComponent;
         var resources: System.ComponentModel.ComponentResourceManager := new System.ComponentModel.ComponentResourceManager(typeof(Form1));
         self.button1 := new System.Windows.Forms.Button();
         self.label1 := new System.Windows.Forms.Label();
-        self.checkBox3 := new System.Windows.Forms.CheckBox();
-        self.label3 := new System.Windows.Forms.Label();
         self.textBox1 := new System.Windows.Forms.TextBox();
         self.button2 := new System.Windows.Forms.Button();
         self.label4 := new System.Windows.Forms.Label();
@@ -32,9 +30,14 @@ procedure InitializeComponent;
         self.radioButton7 := new System.Windows.Forms.RadioButton();
         self.radioButton8 := new System.Windows.Forms.RadioButton();
         self.radioButton9 := new System.Windows.Forms.RadioButton();
+        self.groupBox4 := new System.Windows.Forms.GroupBox();
+        self.radioButton10 := new System.Windows.Forms.RadioButton();
+        self.radioButton11 := new System.Windows.Forms.RadioButton();
+        self.radioButton12 := new System.Windows.Forms.RadioButton();
         self.groupBox1.SuspendLayout();
         self.groupBox2.SuspendLayout();
         self.groupBox3.SuspendLayout();
+        self.groupBox4.SuspendLayout();
         self.SuspendLayout();
         // 
         // button1
@@ -58,28 +61,9 @@ procedure InitializeComponent;
         self.label1.TextAlign := System.Drawing.ContentAlignment.MiddleLeft;
         self.label1.MouseClick += label1_MouseClick;
         // 
-        // checkBox3
-        // 
-        self.checkBox3.Font := new System.Drawing.Font('Microsoft Sans Serif', 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
-        self.checkBox3.Location := new System.Drawing.Point(120, 79);
-        self.checkBox3.Name := 'checkBox3';
-        self.checkBox3.Size := new System.Drawing.Size(13, 13);
-        self.checkBox3.TabIndex := 3;
-        self.checkBox3.UseVisualStyleBackColor := true;
-        // 
-        // label3
-        // 
-        self.label3.Font := new System.Drawing.Font('Microsoft Sans Serif', 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
-        self.label3.Location := new System.Drawing.Point(12, 69);
-        self.label3.Name := 'label3';
-        self.label3.Size := new System.Drawing.Size(102, 31);
-        self.label3.TabIndex := 1;
-        self.label3.Text := 'Умный режим';
-        self.label3.TextAlign := System.Drawing.ContentAlignment.MiddleCenter;
-        // 
         // textBox1
         // 
-        self.textBox1.Location := new System.Drawing.Point(12, 331);
+        self.textBox1.Location := new System.Drawing.Point(12, 381);
         self.textBox1.Multiline := true;
         self.textBox1.Name := 'textBox1';
         self.textBox1.ReadOnly := true;
@@ -92,7 +76,7 @@ procedure InitializeComponent;
         // button2
         // 
         self.button2.Font := new System.Drawing.Font('Microsoft Sans Serif', 8.25, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
-        self.button2.Location := new System.Drawing.Point(12, 276);
+        self.button2.Location := new System.Drawing.Point(12, 326);
         self.button2.Name := 'button2';
         self.button2.Size := new System.Drawing.Size(102, 23);
         self.button2.TabIndex := 12;
@@ -103,7 +87,7 @@ procedure InitializeComponent;
         // label4
         // 
         self.label4.Font := new System.Drawing.Font('Microsoft Sans Serif', 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
-        self.label4.Location := new System.Drawing.Point(120, 275);
+        self.label4.Location := new System.Drawing.Point(120, 325);
         self.label4.Name := 'label4';
         self.label4.Size := new System.Drawing.Size(152, 23);
         self.label4.TabIndex := 1;
@@ -113,7 +97,7 @@ procedure InitializeComponent;
         // button3
         // 
         self.button3.Font := new System.Drawing.Font('Microsoft Sans Serif', 8.25, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
-        self.button3.Location := new System.Drawing.Point(202, 302);
+        self.button3.Location := new System.Drawing.Point(202, 352);
         self.button3.Name := 'button3';
         self.button3.Size := new System.Drawing.Size(70, 23);
         self.button3.TabIndex := 13;
@@ -123,7 +107,7 @@ procedure InitializeComponent;
         // 
         // progressBar1
         // 
-        self.progressBar1.Location := new System.Drawing.Point(12, 302);
+        self.progressBar1.Location := new System.Drawing.Point(12, 352);
         self.progressBar1.Name := 'progressBar1';
         self.progressBar1.Size := new System.Drawing.Size(184, 23);
         self.progressBar1.TabIndex := 4;
@@ -173,7 +157,7 @@ procedure InitializeComponent;
         // label7
         // 
         self.label7.Font := new System.Drawing.Font('Microsoft Sans Serif', 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
-        self.label7.Location := new System.Drawing.Point(12, 250);
+        self.label7.Location := new System.Drawing.Point(12, 300);
         self.label7.Name := 'label7';
         self.label7.Size := new System.Drawing.Size(152, 23);
         self.label7.TabIndex := 1;
@@ -183,7 +167,7 @@ procedure InitializeComponent;
         // 
         // textBox2
         // 
-        self.textBox2.Location := new System.Drawing.Point(170, 253);
+        self.textBox2.Location := new System.Drawing.Point(170, 303);
         self.textBox2.Name := 'textBox2';
         self.textBox2.Size := new System.Drawing.Size(102, 20);
         self.textBox2.TabIndex := 11;
@@ -223,7 +207,7 @@ procedure InitializeComponent;
         self.groupBox1.Controls.Add(self.radioButton3);
         self.groupBox1.Controls.Add(self.radioButton2);
         self.groupBox1.Font := new System.Drawing.Font('Microsoft Sans Serif', 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
-        self.groupBox1.Location := new System.Drawing.Point(12, 97);
+        self.groupBox1.Location := new System.Drawing.Point(12, 147);
         self.groupBox1.Name := 'groupBox1';
         self.groupBox1.Size := new System.Drawing.Size(260, 46);
         self.groupBox1.TabIndex := 7;
@@ -236,7 +220,7 @@ procedure InitializeComponent;
         self.groupBox2.Controls.Add(self.radioButton6);
         self.groupBox2.Controls.Add(self.radioButton5);
         self.groupBox2.Font := new System.Drawing.Font('Microsoft Sans Serif', 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
-        self.groupBox2.Location := new System.Drawing.Point(12, 149);
+        self.groupBox2.Location := new System.Drawing.Point(12, 199);
         self.groupBox2.Name := 'groupBox2';
         self.groupBox2.RightToLeft := System.Windows.Forms.RightToLeft.No;
         self.groupBox2.Size := new System.Drawing.Size(260, 46);
@@ -276,9 +260,9 @@ procedure InitializeComponent;
         // label2
         // 
         self.label2.Font := new System.Drawing.Font('Microsoft Sans Serif', 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
-        self.label2.Location := new System.Drawing.Point(145, 69);
+        self.label2.Location := new System.Drawing.Point(12, 69);
         self.label2.Name := 'label2';
-        self.label2.Size := new System.Drawing.Size(102, 31);
+        self.label2.Size := new System.Drawing.Size(235, 31);
         self.label2.TabIndex := 1;
         self.label2.Text := 'Частота слов в файле';
         self.label2.TextAlign := System.Drawing.ContentAlignment.MiddleCenter;
@@ -298,7 +282,7 @@ procedure InitializeComponent;
         self.groupBox3.Controls.Add(self.radioButton8);
         self.groupBox3.Controls.Add(self.radioButton9);
         self.groupBox3.Font := new System.Drawing.Font('Microsoft Sans Serif', 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
-        self.groupBox3.Location := new System.Drawing.Point(12, 201);
+        self.groupBox3.Location := new System.Drawing.Point(12, 251);
         self.groupBox3.Name := 'groupBox3';
         self.groupBox3.RightToLeft := System.Windows.Forms.RightToLeft.No;
         self.groupBox3.Size := new System.Drawing.Size(260, 46);
@@ -335,10 +319,53 @@ procedure InitializeComponent;
         self.radioButton9.Text := 'Прямой';
         self.radioButton9.UseVisualStyleBackColor := true;
         // 
+        // groupBox4
+        // 
+        self.groupBox4.Controls.Add(self.radioButton10);
+        self.groupBox4.Controls.Add(self.radioButton11);
+        self.groupBox4.Controls.Add(self.radioButton12);
+        self.groupBox4.Font := new System.Drawing.Font('Microsoft Sans Serif', 9, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, (System.Byte(204)));
+        self.groupBox4.Location := new System.Drawing.Point(12, 95);
+        self.groupBox4.Name := 'groupBox4';
+        self.groupBox4.Size := new System.Drawing.Size(260, 46);
+        self.groupBox4.TabIndex := 14;
+        self.groupBox4.TabStop := false;
+        self.groupBox4.Text := 'Частотный режим';
+        // 
+        // radioButton10
+        // 
+        self.radioButton10.Checked := true;
+        self.radioButton10.Location := new System.Drawing.Point(6, 20);
+        self.radioButton10.Name := 'radioButton10';
+        self.radioButton10.Size := new System.Drawing.Size(48, 20);
+        self.radioButton10.TabIndex := 5;
+        self.radioButton10.TabStop := true;
+        self.radioButton10.Text := 'Нет';
+        self.radioButton10.UseVisualStyleBackColor := true;
+        // 
+        // radioButton11
+        // 
+        self.radioButton11.Location := new System.Drawing.Point(169, 20);
+        self.radioButton11.Name := 'radioButton11';
+        self.radioButton11.Size := new System.Drawing.Size(85, 20);
+        self.radioButton11.TabIndex := 7;
+        self.radioButton11.Text := 'Обратный';
+        self.radioButton11.UseVisualStyleBackColor := true;
+        // 
+        // radioButton12
+        // 
+        self.radioButton12.Location := new System.Drawing.Point(81, 20);
+        self.radioButton12.Name := 'radioButton12';
+        self.radioButton12.Size := new System.Drawing.Size(71, 20);
+        self.radioButton12.TabIndex := 6;
+        self.radioButton12.Text := 'Прямой';
+        self.radioButton12.UseVisualStyleBackColor := true;
+        // 
         // Form1
         // 
-        self.ClientSize := new System.Drawing.Size(284, 440);
+        self.ClientSize := new System.Drawing.Size(284, 490);
         self.Controls.Add(self.label2);
+        self.Controls.Add(self.groupBox4);
         self.Controls.Add(self.groupBox3);
         self.Controls.Add(self.groupBox2);
         self.Controls.Add(self.groupBox1);
@@ -347,10 +374,8 @@ procedure InitializeComponent;
         self.Controls.Add(self.textBox1);
         self.Controls.Add(self.checkBox1);
         self.Controls.Add(self.checkBox4);
-        self.Controls.Add(self.checkBox3);
         self.Controls.Add(self.checkBox2);
         self.Controls.Add(self.label6);
-        self.Controls.Add(self.label3);
         self.Controls.Add(self.label5);
         self.Controls.Add(self.label4);
         self.Controls.Add(self.label7);
@@ -367,6 +392,7 @@ procedure InitializeComponent;
         self.groupBox1.ResumeLayout(false);
         self.groupBox2.ResumeLayout(false);
         self.groupBox3.ResumeLayout(false);
+        self.groupBox4.ResumeLayout(false);
         self.ResumeLayout(false);
         self.PerformLayout();
     end;

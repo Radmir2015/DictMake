@@ -25,8 +25,6 @@ type
     {$resource Unit1.Form1.resources}
     button1: Button;
     label1: &Label;
-    checkBox3: CheckBox;
-    label3: &Label;
     textBox1: TextBox;
     button2: Button;
     label4: &Label;
@@ -53,6 +51,10 @@ type
     radioButton7: RadioButton;
     radioButton8: RadioButton;
     radioButton9: RadioButton;
+    groupBox4: GroupBox;
+    radioButton10: RadioButton;
+    radioButton11: RadioButton;
+    radioButton12: RadioButton;
     groupBox1: GroupBox;
     {$include Unit1.Form1.inc}
   {$endregion FormDesigner}
@@ -193,12 +195,16 @@ begin
    var am := rex.Replace(textBox2.Text, '').ToInteger;
    textBox2.Text := am + '';
    var tarr := am <> 0 ? output.Item1[0 : am] : output.Item1;
-   if checkBox3.Checked then
+   if (radioButton11.Checked or radioButton12.Checked) then
    begin
-   var k := (am <> 0 ? output.Item2[0 : am] : output.Item2).Min;
+   var k := radioButton12.Checked ? (am <> 0 ? output.Item2[0 : am] : output.Item2).Min : (am <> 0 ? output.Item2[0 : am] : output.Item2).Max;
    var temp := new string[tarr.length];
-   for var i := 0 to tarr.length - 1 do
-   temp[i] := Trim((tarr[i] + ' ') * round(output.Item2[i] / k));
+   if radioButton12.Checked then
+     for var i := 0 to tarr.length - 1 do
+     temp[i] := Trim((tarr[i] + ' ') * round(output.Item2[i] / k))
+   else
+     for var i := 0 to tarr.length - 1 do
+     temp[i] := Trim((tarr[i] + ' ') * round(k / output.Item2[i]));
    tarr := temp;
    end;
 //  var tarr := (textBox2.Text.Replace(' ', '') <> '') and (textBox2.Text.Replace(' ', '') <> '0') ? res.Item1[0 : textBox2.Text.Replace(' ', '').ToInteger] : res.Item1;
